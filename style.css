@@ -1,0 +1,373 @@
+#navbar {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.navbar-brand,
+.nav-link {
+  color: #ffd700;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  text-decoration: none !important;
+}
+
+.dropdown-menu .dropdown-item {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  color: #f39c12 !important;
+  text-decoration: none !important;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.dropdown-menu {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 2rem;
+  border-radius: 10px;
+  width: 800px;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+}
+
+.dropdown-menu ul {
+  color: white;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+.dropdown-menu ul li:hover a {
+  color: #f39c12;
+}
+.dropdown-menu ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.product-dropdown-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  color: #fff;
+}
+
+.product-category {
+  width: 20%;
+}
+
+.product-category h5 {
+  color: #ffd700;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.product-category ul {
+  list-style: none;
+  padding: 0;
+}
+
+.product-category ul li {
+  padding: 5px 0;
+  color: #fff;
+}
+
+.product-category ul li:hover {
+  color: #f39c12;
+  text-decoration: none;
+}
+
+.product-images {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.product-images img {
+  width: 48%;
+  border-radius: 10px;
+}
+
+.navbar-nav .nav-link:hover,
+.dropdown-item:hover {
+  color: #f39c12 !important;
+  text-decoration: none !important;
+}
+
+/* Carousel */
+.carousel-item {
+  height: 85vh;
+}
+
+.carousel-item img {
+  object-fit: cover;
+  height: 100%;
+}
+
+.carousel-item {
+  position: relative;
+}
+
+.carousel-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0) 30%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  color: white;
+  text-align: center;
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.carousel-caption h5 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  margin-bottom: 10px;
+}
+
+.carousel-caption p {
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .carousel-caption h5 {
+    font-size: 1.8rem;
+  }
+
+  .carousel-caption p {
+    font-size: 1.2rem;
+  }
+}
+
+.carousel-caption h5 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  margin-bottom: 10px;
+}
+
+.carousel-caption p {
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .carousel-caption h5 {
+    font-size: 1.8rem;
+  }
+
+  .carousel-caption p {
+    font-size: 1.2rem;
+  }
+}
+
+#coffeeCarousel {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.navbar {
+  border: 3px solid rgba(255, 255, 255, 0.444);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.205) 60%
+  );
+}
+.navbar-nav .nav-link:hover {
+  color: #f39c12 !important;
+  text-decoration: none !important;
+}
+
+.icon-group a {
+  color: white !important;
+}
+.icon-group a:hover {
+  color: #f39c12;
+}
+
+.btn-warning:hover {
+  background-color: #f1c40f;
+}
+
+.box-categories {
+  position: relative;
+}
+
+.box-categories .box-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.product-decription {
+  border-top: 3px dashed white;
+}
+
+.box-categories .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 100%;
+}
+.box-sale {
+  position: relative;
+  overflow: hidden;
+  background-color: blue;
+  height: 100%;
+}
+
+.box-item {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.box-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.box-item:hover img {
+  transform: scale(1.1);
+}
+
+.text {
+  position: absolute;
+  color: white;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.5);
+  bottom: 70px;
+  left: 20px;
+  z-index: 2;
+}
+
+.text h3 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.btn-readmore {
+  display: inline-block;
+  background-color: #ffb703;
+  padding: 8px 15px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  border-radius: 5px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.btn-readmore:hover {
+  background-color: #fb8500;
+}
+
+/*Reserve Table*/
+
+.getTable {
+  background-color: rgb(108, 91, 91);
+  height: auto;
+  padding: 30px;
+}
+
+.opening-hours {
+  background-color: #ccbfa3;
+  padding: 20px;
+  color: white;
+  border-radius: 10px;
+}
+
+.reservation-form {
+  background-color: #2f2f2f;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.reservation-form label {
+  color: white;
+}
+
+.btn-submit {
+  background-color: #e2b94b;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.form-control {
+  background-color: transparent;
+  color: white;
+  border: 1px solid #e2b94b;
+}
+
+.form-control::placeholder {
+  color: #ddd;
+}
+
+.notes-section textarea {
+  resize: none;
+}

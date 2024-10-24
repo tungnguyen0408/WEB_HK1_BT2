@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coffee Shop - Products</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      /* Style for the sidebar */
+      .sidebar {
+        background-color: #f8f9fa;
+        padding: 20px;
+        height: 100%;
+      }
+      .filter-section {
+        margin-top: 30px;
+      }
+      /* Style for product cards */
+      .product-card {
+        margin-bottom: 20px;
+      }
+      .product-card img {
+        height: 200px;
+        object-fit: cover;
+      }
+      .category-title {
+        font-size: 1.5rem; /* Increased font size for the title */
+        margin-bottom: 15px; /* Space below the title */
+        text-align: center; /* Center the title */
+        color: #333; /* Darker color for the title */
+        font-weight: bold; /* Bold title */
+      }
+
+      .category-list {
+        padding: 0; /* Remove default padding */
+      }
+
+      .category-list .list-group-item {
+        border: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        background-color: #7e6e6e;
+      }
+      .category-list .list-group-item a {
+        color: #ffb703 !important;
+      }
+
+      .category-list .list-group-item:hover {
+        background-color: #ffb703; /* Change background color on hover */
+      }
+
+      .category-list .list-group-item a {
+        text-decoration: none;
+        color: #333;
+        display: block;
+        padding: 10px;
+      }
+
+      .category-list .list-group-item a:hover {
+        color: white !important;
+      }
+      .product-item {
+        display: flex;
+        align-items: center;
+      }
+
+      .product-item img {
+        width: 50px;
+        height: auto;
+      }
+
+      .product-item h6 {
+        margin-bottom: 0;
+      }
+
+      .text-muted {
+        color: #6c757d;
+      }
+      .card {
+        background-color: rgb(213, 203, 203);
+      }
+    </style>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg fixed-top navbar-dark"
+      style="height: 100px"
+    >
+      <div class="container">
+        <a class="navbar-brand text-white" href="#">
+          <img src="/asset/logo.jpg" alt="Halu Cafe" width="40" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link active text-white"
+                aria-current="page"
+                href="/index.html"
+                >Trang chủ</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Giới thiệu</a>
+            </li>
+            <li class="nav-item dropdown mega-dropdown">
+              <a
+                class="nav-link dropdown-toggle text-white"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Sản phẩm
+              </a>
+              <ul
+                class="dropdown-menu mega-menu"
+                aria-labelledby="navbarDropdown"
+              >
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <h6 class="text-warning">COFFEE</h6>
+                      <ul class="list-unstyled">
+                        <li><a href="#">Espresso</a></li>
+                        <li><a href="#">Cappuccino</a></li>
+                        <li><a href="#">Vanilla Latte</a></li>
+                        <li><a href="#">Caramel Machiato</a></li>
+                      </ul>
+                      <img
+                        src="asset/huongvimoi.webp"
+                        alt="Coffee"
+                        class="img-fluid"
+                      />
+                    </div>
+                    <div class="col-md-4">
+                      <h6 class="text-warning">NƯỚC ÉP</h6>
+                      <ul class="list-unstyled">
+                        <li><a href="#">Dưa hấu</a></li>
+                        <li><a href="#">Cam</a></li>
+                        <li><a href="#">Táo</a></li>
+                        <li><a href="#">Dứa</a></li>
+                      </ul>
+                      <img
+                        src="asset/nuocep.jpg"
+                        alt="Juice"
+                        class="img-fluid"
+                      />
+                    </div>
+                    <div class="col-md-4">
+                      <h6 class="text-warning">COCKTAIL</h6>
+                      <ul class="list-unstyled">
+                        <li><a href="#">Cocktail Bloody Mary</a></li>
+                        <li><a href="#">Cocktail Mojito</a></li>
+                        <li><a href="#">Cocktail B-52</a></li>
+                        <li><a href="#">Cocktail Bacardi</a></li>
+                      </ul>
+                      <img
+                        src="asset/cocktail-thuc-uong-quen-thuoc-trong-doi-song.jpg"
+                        alt="Cocktail"
+                        class="img-fluid"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Tin tức</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Liên hệ</a>
+            </li>
+          </ul>
+          <div
+            class="icon-group d-flex align-items-center justify-content-around"
+            style="width: 200px"
+          >
+            <a href="#" aria-label="Search"><i class="bi bi-search"></i></a>
+            <a href="#" aria-label="Cart"><i class="bi bi-cart"></i></a>
+            <a href="#" aria-label="Account"><i class="bi bi-person"></i></a>
+            <a href="#" class="btn btn-warning text-dark rounded-pill ms-3"
+              >Đặt bàn</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div
+      class="container-fluid"
+      style="padding-top: 150px; background-color: rgba(50, 27, 17, 0.737)"
+    >
+      <div class="row">
+        <!-- Left Sidebar: Categories and Filters -->
+        <div class="col-md-3 sidebar" style="background-color: #dbd3d3">
+          <h4 class="category-title">Danh mục sản phẩm</h4>
+          <ul class="list-group category-list">
+            <li class="list-group-item"><a href="#">Cà phê</a></li>
+            <li class="list-group-item"><a href="#">Nước ép</a></li>
+            <li class="list-group-item"><a href="#">Cocktail</a></li>
+          </ul>
+
+          <div class="filter-section">
+            <h5>Lọc theo giá:</h5>
+            <input type="range" class="form-range" min="0" max="100" step="5" />
+            <span>Giá dưới 100.000Đ</span>
+
+            <div class="hot-products mt-4">
+              <h5>Sản phẩm hot trong tuần</h5>
+              <div class="d-flex flex-column">
+                <div class="product-item d-flex align-items-center mb-3">
+                  <img
+                    src="asset/huongvimoi.webp"
+                    alt="Sản phẩm 1"
+                    class="img-fluid"
+                    style="width: 80px; height: auto"
+                  />
+                  <div class="ms-2">
+                    <h6 class="mb-0">Sản phẩm 1</h6>
+                    <span class="text-muted">Giá: 100.000đ</span>
+                  </div>
+                </div>
+                <div class="product-item d-flex align-items-center mb-3">
+                  <img
+                    src="asset/image.png"
+                    alt="Sản phẩm 2"
+                    class="img-fluid"
+                    style="width: 80px; height: auto"
+                  />
+                  <div class="ms-2">
+                    <h6 class="mb-0">Sản phẩm 2</h6>
+                    <span class="text-muted">Giá: 120.000đ</span>
+                  </div>
+                </div>
+                <div class="product-item d-flex align-items-center mb-3">
+                  <img
+                    src="asset/cocktail-thuc-uong-quen-thuoc-trong-doi-song.jpg"
+                    alt="Sản phẩm 3"
+                    class="img-fluid"
+                    style="width: 80px; height: auto"
+                  />
+                  <div class="ms-2">
+                    <h6 class="mb-0">Sản phẩm 3</h6>
+                    <span class="text-muted">Giá: 150.000đ</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Content: Product Listings -->
+        <div class="col-md-9">
+          <h3 class="mb-4 text-white">Tất cả sản phẩm</h3>
+          <div class="row">
+            <!-- Product card example -->
+            <div class="col-md-4 product-card">
+              <div class="card">
+                <img
+                  src="asset/cocktail-thuc-uong-quen-thuoc-trong-doi-song.jpg"
+                  class="card-img-top"
+                  alt="Product 1"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Product Name</h5>
+                  <p class="card-text">Giá: 150.000Đ</p>
+                  <a
+                    href="#"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#cartModal"
+                    >Thêm vào giỏ hàng</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Add more product cards as needed -->
+            <div class="col-md-4 product-card">
+              <div class="card">
+                <img
+                  src="asset/huongvimoi.webp"
+                  class="card-img-top"
+                  alt="Product 2"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Product Name</h5>
+                  <p class="card-text">Giá: 120.000Đ</p>
+                  <a
+                    href="#"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#cartModal"
+                    >Thêm vào giỏ hàng</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 product-card">
+              <div class="card">
+                <img
+                  src="asset/image1.png"
+                  class="card-img-top"
+                  alt="Product 3"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Product Name</h5>
+                  <p class="card-text">Giá: 100.000Đ</p>
+                  <a
+                    href="#"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#cartModal"
+                    >Thêm vào giỏ hàng</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 product-card">
+              <div class="card">
+                <img
+                  src="asset/image1.png"
+                  class="card-img-top"
+                  alt="Product 3"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Product Name</h5>
+                  <p class="card-text">Giá: 100.000Đ</p>
+                  <a
+                    href="#"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#cartModal"
+                    >Thêm vào giỏ hàng</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 product-card">
+              <div class="card">
+                <img
+                  src="asset/image1.png"
+                  class="card-img-top"
+                  alt="Product 3"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Product Name</h5>
+                  <p class="card-text">Giá: 100.000Đ</p>
+                  <a
+                    href="#"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#cartModal"
+                    >Thêm vào giỏ hàng</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 product-card">
+              <div class="card">
+                <img
+                  src="asset/image1.png"
+                  class="card-img-top"
+                  alt="Product 3"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Product Name</h5>
+                  <p class="card-text">Giá: 100.000Đ</p>
+                  <a
+                    href="#"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#cartModal"
+                    >Thêm vào giỏ hàng</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cart Popup Modal -->
+    <div
+      class="modal fade"
+      id="cartModal"
+      tabindex="-1"
+      aria-labelledby="cartModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="cartModalLabel">Giỏ hàng của bạn</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <!-- Cart items will be dynamically inserted here -->
+            <div class="cart-items">
+              <div
+                class="cart-item d-flex justify-content-between align-items-center mb-3"
+              >
+                <div class="d-flex align-items-center">
+                  <img
+                    src="asset/image1.png"
+                    alt="Product 1"
+                    style="width: 80px; height: auto"
+                  />
+                  <div class="ms-3">
+                    <h6>Sản phẩm 1</h6>
+                    <span class="text-muted">Giá: 100.000Đ</span>
+                  </div>
+                </div>
+                <span>Số lượng: 1</span>
+              </div>
+              <!-- Additional cart items can be added in the same format -->
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Tiếp tục mua hàng
+            </button>
+            <a href="checkout.html" class="btn btn-primary">Thanh toán</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
