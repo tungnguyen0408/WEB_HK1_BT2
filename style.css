@@ -101,12 +101,13 @@
 
 /* Carousel */
 .carousel-item {
-  height: 85vh;
+  border-radius: 20px;
 }
 
 .carousel-item img {
   object-fit: cover;
   height: 100%;
+  border-radius: 20px;
 }
 
 .carousel-item {
@@ -141,7 +142,7 @@
 
 .carousel-caption {
   position: absolute;
-  top: 50%;
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
@@ -151,7 +152,7 @@
 }
 .carousel-caption {
   position: absolute;
-  top: 50%;
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
@@ -215,6 +216,11 @@
 #coffeeCarousel {
   width: 100%;
   margin: 0 auto;
+}
+
+#coffeeCarousel .carousel-item img {
+  height: 800px; /* Adjust this value as needed */
+  object-fit: cover; /* Ensures the image scales well within the height */
 }
 
 .navbar {
@@ -333,7 +339,7 @@
 }
 
 .opening-hours {
-  background-color: #ccbfa3;
+  background-color: #b7a47c;
   padding: 20px;
   color: white;
   border-radius: 10px;
@@ -370,4 +376,111 @@
 
 .notes-section textarea {
   resize: none;
+}
+
+/*Process*/
+.coffee-process-section {
+  background-color: #8b5e34;
+  border-radius: 20px;
+  color: white;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.coffee-process-text {
+  flex: 1;
+  position: relative;
+}
+
+.coffee-process-text h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.coffee-process-text p {
+  margin-bottom: 20px;
+}
+
+.coffee-process-text button {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+}
+
+.coffee-bean-img {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+}
+
+.centered-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Ensure carousel fills its container properly */
+.coffee-carousel-item img {
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 20px I !important;
+}
+
+.coffee-carousel-control-prev-icon,
+.coffee-carousel-control-next-icon {
+  background-color: #e2b94b;
+  border-radius: 50%;
+}
+
+/*Divider*/
+
+.divider {
+  width: 55%;
+  height: 4px;
+  border: none;
+  border-top: 4px dashed #8b5e34;
+  margin: 50px auto;
+}
+
+.card-text {
+  color: #fff;
+  font-weight: 500;
+}
+
+.card-title a,
+.special-price {
+  color: #e6b41d;
+  font-weight: 700;
+}
+
+footer {
+  background-color: #2f2f2f;
+}
+
+.image-container {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-image {
+  max-width: 80%; /* Reduce max-width to make the image smaller */
+  max-height: 80%; /* Reduce max-height if needed */
+}
+
+.features-section {
+  padding: 2rem 0;
+}
+
+.feature-item {
+  text-align: center;
 }

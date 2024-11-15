@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giỏ Hàng</title>
+    <style>
+      /* Cart Container */
+      .cart-container {
+        max-width: 1000px; /* Increased width for the container */
+        margin: 20px auto;
+        font-family: Arial, sans-serif;
+      }
+
+      .cart-container h2 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+        color: #333;
+        text-align: center;
+      }
+
+      /* Cart Table */
+      .cart-table {
+        width: 100%; /* Ensure the table takes the full width */
+        border-collapse: collapse;
+        margin-bottom: 20px;
+      }
+
+      .cart-table th,
+      .cart-table td {
+        padding: 10px; /* Keep padding reasonable */
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+        font-size: 1rem; /* Font size for table data */
+        color: #333;
+      }
+
+      .cart-table th {
+        font-weight: bold;
+        background-color: #f7f7f7;
+      }
+
+      .cart-table img {
+        width: 100px; /* Adjust image width */
+        height: auto;
+        border-radius: 5px;
+      }
+
+      /* Quantity Controls */
+      .quantity {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .quantity button {
+        background-color: #e2b94b;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+
+      .quantity input {
+        width: 40px;
+        text-align: center;
+        border: 1px solid #ddd;
+        margin: 0 5px;
+      }
+
+      .delete {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1.2rem;
+        color: #e2b94b;
+      }
+
+      /* Cart Summary */
+      .cart-summary {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+      }
+
+      .continue-shopping,
+      .checkout {
+        background-color: #e2b94b;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 1rem;
+        border-radius: 4px;
+      }
+
+      .continue-shopping {
+        background-color: #f1c40f;
+      }
+
+      .total {
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cart-container">
+      <h2>GIỎ HÀNG</h2>
+      <table class="cart-table">
+        <thead>
+          <tr>
+            <th>Ảnh sản phẩm</th>
+            <th>Tên sản phẩm</th>
+            <th>Đơn giá</th>
+            <th>Số lượng</th>
+            <th>Thành tiền</th>
+            <th>Xóa</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <img
+                src="asset/cocktail-thuc-uong-quen-thuoc-trong-doi-song.jpg"
+                alt="Nước ép dứa"
+              />
+            </td>
+            <td>Nước ép dứa</td>
+            <td>60.000₫</td>
+            <td>
+              <div class="quantity">
+                <button class="decrement">-</button>
+                <input type="text" value="1" />
+                <button class="increment">+</button>
+              </div>
+            </td>
+            <td>60.000₫</td>
+            <td><button class="delete">🗑️</button></td>
+          </tr>
+          <tr>
+            <td>
+              <img src="asset/huongvimoi.webp" alt="Trà sữa khoai môn" />
+            </td>
+            <td>Trà sữa khoai môn</td>
+            <td>50.000₫</td>
+            <td>
+              <div class="quantity">
+                <button class="decrement">-</button>
+                <input type="text" value="2" />
+                <button class="increment">+</button>
+              </div>
+            </td>
+            <td>100.000₫</td>
+            <td><button class="delete">🗑️</button></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="cart-summary">
+        <button class="continue-shopping">TIẾP TỤC MUA HÀNG</button>
+        <div class="total">
+          <span>Tổng tiền thanh toán:</span>
+          <span>160.000₫</span>
+        </div>
+        <button class="checkout">TIẾN HÀNH THANH TOÁN</button>
+      </div>
+    </div>
+  </body>
+</html>

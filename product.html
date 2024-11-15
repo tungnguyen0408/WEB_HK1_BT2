@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chi Tiết Sản Phẩm</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
+      .product-thumbnail {
+        width: 80px;
+        height: 80px;
+        cursor: pointer;
+        margin-right: 5px;
+      }
+
+      .product-thumbnail.active {
+        border: 2px solid #8b5e34;
+      }
+
+      .product-main-image {
+        width: 100%;
+        height: auto;
+      }
+
+      .product-info {
+        font-size: 1.1rem;
+        color: #8b5e34;
+      }
+
+      .btn-buy {
+        background-color: #8b5e34;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+      }
+
+      /* Tab Container */
+      .tabs {
+        margin-top: 20px;
+      }
+
+      /* Tab Buttons */
+      .nav-tabs .nav-link {
+        border: none;
+        color: #8b5e34;
+        font-weight: 600;
+        padding: 12px 20px;
+        background-color: #f8f9fa; /* Light background for inactive tabs */
+        margin-right: 5px;
+        border-radius: 8px 8px 0 0; /* Rounded top edges */
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      .nav-tabs .nav-link.active {
+        background-color: #e2b94b; /* Active tab color */
+        color: white;
+        border: none;
+        border-radius: 8px 8px 0 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for active tab */
+      }
+
+      /* Content Area */
+      .tab-content {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 0 8px 8px 8px; /* Rounded bottom edges */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        color: #333;
+        font-size: 1rem;
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 768px) {
+        .nav-tabs .nav-link {
+          padding: 10px 15px;
+          font-size: 0.9rem;
+        }
+      }
+
+      input[type="number"]::-webkit-outer-spin-button,
+      input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      input[type="number"] {
+        -moz-appearance: textfield; /* For Firefox */
+      }
+      .breadcrumb-nav {
+        background-color: #f9f9f9; /* Light background */
+        padding: 10px 15px;
+        border-radius: 5px;
+      }
+
+      .breadcrumb-item + .breadcrumb-item::before {
+        content: ">";
+        color: #ccc;
+        margin: 0 8px;
+      }
+
+      .breadcrumb a {
+        color: #8b5e34; /* Coffee-brown color */
+        text-decoration: none;
+      }
+
+      .breadcrumb a:hover {
+        text-decoration: underline;
+      }
+
+      .breadcrumb-item.active {
+        color: #8b5e34; /* Coffee-brown for the active item */
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="navbar navbar-expand-lg fixed-top navbar-dark"
+      style="height: 100px"
+    >
+      <div class="container">
+        <a class="navbar-brand text-white" href="#">
+          <img src="/asset/logo.png" alt="Halu Cafe" width="40" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link active text-white"
+                aria-current="page"
+                href="/index.html"
+                >Trang chủ</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/introduce.html"
+                >Giới thiệu</a
+              >
+            </li>
+            <li class="nav-item dropdown mega-dropdown">
+              <a
+                class="nav-link dropdown-toggle text-white"
+                href="/divider.html"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                onclick="window.location.href='/introduce.html';"
+              >
+                Sản phẩm
+              </a>
+              <ul
+                class="dropdown-menu mega-menu"
+                aria-labelledby="navbarDropdown"
+                onclick="event.stopPropagation();"
+              >
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <h6 class="text-warning">COFFEE</h6>
+                      <ul class="list-unstyled">
+                        <li><a href="product.html">Espresso</a></li>
+                        <li><a href="product.html">Cappuccino</a></li>
+                        <li><a href="product.html">Vanilla Latte</a></li>
+                        <li><a href="product.html">Caramel Macchiato</a></li>
+                      </ul>
+                      <img
+                        src="asset/huongvimoi.webp"
+                        alt="Coffee"
+                        class="img-fluid"
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <h6 class="text-warning">COCKTAIL</h6>
+                      <ul class="list-unstyled">
+                        <li><a href="product.html">Cocktail Bloody Mary</a></li>
+                        <li><a href="product.html">Cocktail Mojito</a></li>
+                        <li><a href="product.html">Cocktail B-52</a></li>
+                        <li><a href="product.html">Cocktail Bacardi</a></li>
+                      </ul>
+                      <img
+                        src="asset/cocktail-thuc-uong-quen-thuoc-trong-doi-song.jpg"
+                        alt="Cocktail"
+                        class="img-fluid"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#sale">Tin tức</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/contact.html">Liên hệ</a>
+            </li>
+          </ul>
+          <div
+            class="d-flex align-items-center justify-content-around"
+            style="width: 200px"
+          >
+            <a href="#" aria-label="Search"><i class="bi bi-search"></i></a>
+            <a href="/checkout.html" aria-label="Cart"
+              ><i class="bi bi-cart"></i
+            ></a>
+            <a href="#" aria-label="Account"><i class="bi bi-person"></i></a>
+            <a
+              href="#reserve"
+              class="btn btn-warning text-dark rounded-pill ms-3"
+              >Đặt bàn</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="container" style="padding-top: 130px">
+      <nav aria-label="breadcrumb" class="breadcrumb-nav mb-4">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+          <li class="breadcrumb-item"><a href="#">Cocktails</a></li>
+          <li class="breadcrumb-item active" aria-current="page">
+            Cocktail Bloody Mary
+          </li>
+        </ol>
+      </nav>
+      <div class="row">
+        <!-- Main Image and Thumbnails -->
+        <div class="col-md-6">
+          <img
+            id="mainImage"
+            src="asset/cocktail-thuc-uong-quen-thuoc-trong-doi-song.jpg"
+            class="product-main-image mb-3"
+            alt="Product Image"
+          />
+          <div>
+            <img
+              src="asset/huongvimoi.webp"
+              class="product-thumbnail"
+              onclick="changeImage(this)"
+              alt="Thumbnail 1"
+            />
+            <img
+              src="asset/cocktail-thuc-uong-quen-thuoc-trong-doi-song.jpg"
+              class="product-thumbnail"
+              onclick="changeImage(this)"
+              alt="Thumbnail 2"
+            />
+            <img
+              src="asset/nuocep.jpg"
+              class="product-thumbnail"
+              onclick="changeImage(this)"
+              alt="Thumbnail 3"
+            />
+          </div>
+        </div>
+
+        <!-- Product Details -->
+        <div class="col-md-6">
+          <h2>Cocktail Bloody Mary</h2>
+          <p class="product-info">Thương hiệu: Đang cập nhật</p>
+          <p class="product-info">Tình trạng: Còn hàng</p>
+          <h3>50.000đ <del>60.000đ</del></h3>
+          <div class="mb-3">
+            <button id="decrease" class="btn btn-outline-secondary">-</button>
+            <input
+              type="number"
+              id="quantity"
+              value="1"
+              min="1"
+              style="width: 50px; text-align: center"
+            />
+            <button id="increase" class="btn btn-outline-secondary">+</button>
+          </div>
+          <button class="btn-buy">Đặt Hàng</button>
+          <p>
+            Theo lời khuyên của các chuyên gia y tế cho rằng: mùa hè, bạn nên
+            uống ít nhất 2 ly nước ép dứa hấu mỗi ngày. Bởi vì, khi đó các hàm
+            lượng có sẵn chứa trong quả dứa hấu sẽ tự động làm giảm lượng calo
+            bên cạnh việc duy trì sức khỏe của thân.
+          </p>
+          <div>
+            <span>Chia sẻ:</span>
+            <!-- Icons for sharing -->
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-google-plus"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="tabs mt-4">
+        <ul class="nav nav-tabs" id="productTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active"
+              id="product-info-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#product-info"
+              type="button"
+              role="tab"
+            >
+              Thông Tin Sản Phẩm
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="policy-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#policy"
+              type="button"
+              role="tab"
+            >
+              Chính Sách
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="reviews-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#reviews"
+              type="button"
+              role="tab"
+            >
+              Đánh Giá Sản Phẩm
+            </button>
+          </li>
+        </ul>
+        <div class="tab-content mt-3" id="productTabContent">
+          <div
+            class="tab-pane fade show active"
+            id="product-info"
+            role="tabpanel"
+          >
+            Nội dung chi tiết về sản phẩm trà sữa khoai môn.
+          </div>
+          <div class="tab-pane fade" id="policy" role="tabpanel">
+            Chính sách bán hàng và vận chuyển sản phẩm.
+          </div>
+          <div class="tab-pane fade" id="reviews" role="tabpanel">
+            Đánh giá và nhận xét của khách hàng.
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer-->
+    <section class="footer">
+      <div class="container-fluid mt-5">
+        <footer class="text-white text-center text-lg-start">
+          <div class="container p-4">
+            <div class="row mt-4">
+              <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+                <h5 class="text-uppercase mb-4">Cửa hàng cà phê Halu</h5>
+                <div class="w-50 h-50 text-center">
+                  <a href="#"
+                    ><img
+                      class="h-100 w-75 text-center"
+                      src="asset/logo.png"
+                      alt=""
+                  /></a>
+                </div>
+
+                <div class="mt-4">
+                  <a type="button" class="btn btn-floating btn-light btn-lg"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+
+                  <a type="button" class="btn btn-floating btn-light btn-lg"
+                    ><i class="fab fa-dribbble"></i
+                  ></a>
+
+                  <a type="button" class="btn btn-floating btn-light btn-lg"
+                    ><i class="fab fa-twitter"></i
+                  ></a>
+
+                  <a type="button" class="btn btn-floating btn-light btn-lg"
+                    ><i class="fab fa-google-plus-g"></i
+                  ></a>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase mb-4 pb-1">Thông tin về cửa hàng</h5>
+
+                <ul class="fa-ul" style="margin-left: 1.65em">
+                  <li class="mb-3">
+                    <span class="fa-li"><i class="fas fa-home"></i></span
+                    ><span class="ms-2"
+                      >Nguyễn Trãi, Phường Mộ Lao, Hà Đông, Hà Nội</span
+                    >
+                  </li>
+                  <li class="mb-3">
+                    <span class="fa-li"><i class="fas fa-envelope"></i></span
+                    ><span class="ms-2">tungnguyen0408tnnmm@gmmail.com</span>
+                  </li>
+                  <li class="mb-3">
+                    <span class="fa-li"><i class="fas fa-phone"></i></span
+                    ><span class="ms-2">+84 67 082 538</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!--Grid column-->
+              <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase mb-4">Opening hours</h5>
+
+                <table class="table text-center text-white">
+                  <tbody class="fw-normal">
+                    <tr>
+                      <td>Thứ hai - Thứ năm:</td>
+                      <td>8am - 9pm</td>
+                    </tr>
+                    <tr>
+                      <td>Thứ sáu - Thứ bảy:</td>
+                      <td>8am - 7pm</td>
+                    </tr>
+                    <tr>
+                      <td>Chủ nhật:</td>
+                      <td>9am - 10pm</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div
+            class="text-center p-3"
+            style="background-color: rgba(148, 84, 84, 0.77)"
+          >
+            © 2020 Bản quyền:
+            <a
+              class="text-white text-decoration-none"
+              href="https://mdbootstrap.com/"
+              >halucoffee.com</a
+            >
+          </div>
+        </footer>
+      </div>
+    </section>
+    <!-- Bootstrap JS and custom JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      function changeImage(thumbnail) {
+        const mainImage = document.getElementById("mainImage");
+        mainImage.src = thumbnail.src;
+
+        // Remove active class from all thumbnails
+        document.querySelectorAll(".product-thumbnail").forEach((img) => {
+          img.classList.remove("active");
+        });
+
+        // Add active class to clicked thumbnail
+        thumbnail.classList.add("active");
+      }
+
+      // Quantity increment/decrement
+      document
+        .getElementById("increase")
+        .addEventListener("click", function () {
+          const quantityInput = document.getElementById("quantity");
+          quantityInput.value = parseInt(quantityInput.value) + 1;
+        });
+
+      document
+        .getElementById("decrease")
+        .addEventListener("click", function () {
+          const quantityInput = document.getElementById("quantity");
+          if (parseInt(quantityInput.value) > 1) {
+            quantityInput.value = parseInt(quantityInput.value) - 1;
+          }
+        });
+    </script>
+  </body>
+</html>
